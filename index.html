@@ -383,8 +383,28 @@
             padding: 20px;
         }
 
+        
         #github_img, #linkedin_img, #pdf_img, #numero_img {
             width: 25px;
+            margin-top: 7px;
+        }
+
+        #git_box, #linkedin_box, #pdf_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+            background-color: #00c261;
+            transition: 0.2s ease;
+        }
+
+        #git_box:hover, #linkedin_box:hover, #pdf_box:hover {
+            background-color: #006834;
+            transition: 0.2s ease;
+            border-radius: 6px;
         }
 
     </style>
@@ -417,16 +437,21 @@
                     <p id="about_me_text_title">Sobre mim</p>
                     <h4>Desenvolvedor front-end buscando criar interfaces dinâmicas e funcionais. Domino HTML, CSS, JavaScript e SQL, com conhecimentos avançados de design. Busco aplicar minhas habilidades em projetos inovadores, desenvolvendo soluções eficientes e escaláveis enquanto continuo a evoluir tecnicamente.</h4>
                     <div id="contato_icons" >
-                    <a href="https://github.com/cleytonjcp">
-                    <img id="github_img" src="assets/images/github-brands.svg" alt="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/cleytonpadilha/">
-                    <img id="linkedin_img" src="assets/images/linkedin-brands.svg" alt="">
-                    </a>
-                    <a href="">
-                    <img id="pdf_img" src="assets/images/file-pdf-solid.svg" alt="">
-                    </a>
-                    <img id="numero_img" src="assets/images/whatsapp-brands.svg" alt="">
+                        <div id="git_box">
+                            <a href="https://github.com/cleytonjcp">
+                            <img id="github_img" src="assets/images/github-brands.svg" alt="">
+                            </a>
+                        </div>
+                        <div id="linkedin_box" >
+                            <a href="https://www.linkedin.com/in/cleytonpadilha/">
+                            <img id="linkedin_img" src="assets/images/linkedin-brands.svg" alt="">
+                            </a>
+                        </div>
+                        <div id="pdf_box" >
+                            <a href="assets/pdf/Cleyton Padilha - Curriculo.pdf">
+                            <img id="pdf_img" src="assets/images/file-pdf-solid.svg" alt="">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
