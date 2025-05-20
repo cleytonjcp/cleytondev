@@ -1,14 +1,14 @@
 Portfólio Front-End - Cleyton Padilha
 Descrição
-Este projeto é um portfólio pessoal desenvolvido por Cleyton Padilha, um desenvolvedor front-end. O site apresenta informações sobre o desenvolvedor, suas habilidades, projetos realizados e formas de contato. A interface é moderna, responsiva e utiliza animações sutis para melhorar a experiência do usuário.
+Este é o portfólio pessoal de Cleyton Padilha, desenvolvedor front-end. O site apresenta informações sobre o desenvolvedor, suas habilidades, projetos realizados e formas de contato. A interface é moderna, responsiva e utiliza animações sutis para melhorar a experiência do usuário.
 Funcionalidades
 
-Navegação: Barra de navegação fixa com links para as seções Início, Sobre, Habilidades, Projetos e Contato.
-Sobre: Seção com uma breve descrição do desenvolvedor, foto de perfil e links para GitHub, LinkedIn e currículo em PDF.
-Habilidades: Exibição de ícones representando as tecnologias dominadas (HTML5, CSS3, JavaScript).
+Navegação: Barra de navegação fixa com links para Início, Sobre, Habilidades, Projetos e Contato.
+Sobre: Seção com descrição do desenvolvedor, foto de perfil e links para GitHub, LinkedIn e currículo em PDF.
+Habilidades: Exibição de ícones das tecnologias dominadas (HTML5, CSS3, JavaScript).
 Projetos: Destaque de dois projetos:
-Spotify Clone: Uma página de login redesenhada do Spotify com interface moderna.
-CRUD App: Uma aplicação web para gerenciamento de dados (criar, ler, atualizar e excluir).
+Spotify Clone: Página de login redesenhada do Spotify com interface moderna.
+CRUD App: Aplicação web para criar, ler, atualizar e excluir dados.
 
 
 Rodapé: Informações de direitos autorais.
@@ -17,9 +17,9 @@ Responsividade: Design adaptável para dispositivos móveis.
 Tecnologias Utilizadas
 
 HTML5: Estruturação do conteúdo.
-CSS3: Estilização, incluindo animações (como gradiente animado na seção "Sobre") e design responsivo.
-JavaScript: (Não incluso diretamente no código fornecido, mas mencionado no portfólio como uma habilidade).
-Fontes: Google Fonts (Poppins).
+CSS3: Estilização, incluindo animações (gradiente animado na seção "Sobre") e design responsivo.
+JavaScript: Mencionado como habilidade, mas não diretamente incluído no código fornecido.
+Google Fonts: Fonte Poppins para tipografia.
 Ícones e Imagens: Logos de tecnologias e ícones de redes sociais (GitHub, LinkedIn, PDF).
 
 Estrutura do Projeto
@@ -47,22 +47,22 @@ portfolio/
 
 Como Visualizar
 
-Pré-requisitos: Um navegador web moderno (Chrome, Firefox, Edge, etc.).
+Pré-requisitos: Navegador web moderno (Chrome, Firefox, Edge, etc.).
 Instruções:
 Clone ou baixe este repositório.
 Abra o arquivo index.html em um navegador.
-Navegue pelas seções usando a barra de navegação ou os links diretos.
-Para visualizar os projetos (Spotify Clone e CRUD App), clique nos respectivos cards na seção "Projetos".
+Navegue pelas seções usando a barra de navegação ou links diretos.
+Clique nos cards na seção "Projetos" para visualizar o Spotify Clone e o CRUD App.
 
 
 
 Como Contribuir
-Este é um projeto pessoal, mas sugestões são bem-vindas! Entre em contato através do GitHub ou LinkedIn listados na seção "Sobre".
+Este é um projeto pessoal, mas sugestões são bem-vindas! Entre em contato via GitHub ou LinkedIn.
 Contato
 
 GitHub: cleytonjcp
 LinkedIn: Cleyton Padilha
-Currículo: Disponível em PDF no portfólio.
+Currículo: Disponível em PDF na seção "Sobre".
 
 Licença
 © 2025 Cleyton Padilha. Todos os direitos reservados.
