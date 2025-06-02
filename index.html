@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Around</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'Nocashe';
+            src: url('assets/fonts/Nocashe.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+        }
+
+        
+
+        header ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        
+
+        .navopt {
+            color: black;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .hireMe {
+            width: 85px;
+            background-color: black;
+            border: 1px solid;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+
+        .container {
+            background-color: grey;
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 50vw;
+            position: relative;
+            z-index: 1;
+            margin-left: 24vw;
+            margin-top: 5vh;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 75px;
+            font-weight: 500;
+            font-family: 'Nocashe';
+        }
+
+        .content h2 {
+            margin-top: -10vh;
+            font-size: 20   px;
+            font-weight: 400;
+        }
+
+        .content p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        #html, #css, #jscript, #figma, #github {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: 8px;
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border-radius: 20px;
+            cursor: default;
+        }
+
+        #projects {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .projetosBox {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            margin: 60px;
+            border-radius: 20px;
+        }
+
+
+        .projectImg {
+            margin-top: auto;
+            margin-bottom: auto;
+            border-radius: 20px;
+        }
+
+        .projectImg {
+            height: 80%;
+        }
+
+        .projectSub {
+            width: 40vw;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            
+        }
+
+        .projectSub h2 {
+            font-weight: 500;
+        }
+
+        .techUsed {
+            display: flex;
+            gap: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a class="navopt" href="#sobreMim">SOBRE</a>
+                <a class="navopt" href="#projects">PROJETOS</a>
+                <a class="hireMe" href="#contato">CONTATO</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobreMim">
+        <div class="container">
+            <video autoplay loop muted playsinline>
+                <source src="assets/videoBg/videoBackgroundPortfolio.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1>Cleyton Padilha</h1>
+                <h2>Web Developer/Designer</h2>
+                <p>Foco em Desenvolvimento web com habilidades de UI/UX, conhecimentos sólidos de design e dóminio da lógica de programação.</p>
+                <div class="skills">
+                    <p id="html">HTML</p>
+                    <p id="css">CSS</p>
+                    <p id="jscript">JavaScript</p>
+                    <p id="figma">Figma</p>
+                    <p id="github">Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="projetosBox">
+            <img class="projectImg" src="assets/images/spotify_login_page_001.png" alt="sptfyImg">
+            <div class="projectSub">
+                <h2>Spotify Clone</h2>
+                <p>Página de login do Spotify redesenhada, com interface moderna e intuitiva para melhor experiência do usuário.</p>
+                <div class="techUsed" >
+                    <p id="html">HTML</p>
+                    <p id="css">CSS</p>
+                </div>
+            </div>
+        </div>
+        <div class="projetosBox">
+
+        </div>
+    </section>
+</body>
+</html>
