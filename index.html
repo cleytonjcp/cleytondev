@@ -8,6 +8,8 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
@@ -126,7 +128,7 @@
             gap: 10px;
         }
 
-        #html, #css, #jscript, #figma, #github {
+        #html, #css, #jscript, #figma, #github, #photoshop, #illustrator, #php {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -167,7 +169,9 @@
         }
 
         .projectImg {
-            height: 80%;
+            height: 350px;
+            margin-top: 10vh;
+            
         }
 
         .projectSub {
@@ -188,6 +192,46 @@
             gap: 20px;
         }
 
+        .mySocials {
+            width: 100%;
+            height: 10vh;
+            background-color: white;
+            border-top: 1px solid grey;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mySocials h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .social-icon {
+            color: black;
+            font-size: 35px; 
+            margin: 10px; 
+        }
+
+
+        #socialGrid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15vh;
+
+        }
+
+        footer {
+            background-color: black; /* Fundo escuro */
+            color: #fff; /* Texto branco */
+            text-align: center; /* Centraliza o conteúdo */
+            padding: 3px 0; /* Espaçamento interno */
+            position: relative; /* Para posicionamento, se necessário */
+            width: 100%; /* Largura total */
+            height: 5vh;
+            align-items: center;
+
+        }
     </style>
 </head>
 <body>
@@ -214,15 +258,18 @@
                     <p id="html">HTML</p>
                     <p id="css">CSS</p>
                     <p id="jscript">JavaScript</p>
+                    <p id="php">PHP</p>
                     <p id="figma">Figma</p>
                     <p id="github">Git</p>
+                    <p id="photoshop">Photoshop</p>
+                    <p id="illustrator">Illustrator</p>
                 </div>
             </div>
         </div>
     </section>
     <section id="projects">
         <div class="projetosBox">
-            <img class="projectImg" src="assets/images/spotify_login_page_001.png" alt="sptfyImg">
+            <a href="projects/login_page_spotify/index.html" target="_blank"><img class="projectImg" src="assets/images/spotify_login_page_001.png" alt="sptfyImg"></a>
             <div class="projectSub">
                 <h2>Spotify Clone</h2>
                 <p>Página de login do Spotify redesenhada, com interface moderna e intuitiva para melhor experiência do usuário.</p>
@@ -233,8 +280,36 @@
             </div>
         </div>
         <div class="projetosBox">
-
+            <a href="projects/crud_app/index.html" target="_blank"><img class="projectImg" src="assets/images/Screenshot_1.png" alt="crud_app"></a>
+            <div class="projectSub">
+                <h2>Crud App</h2>
+                <p>Aplcação web para criar, ler, editar e excluir dados, gerenciando informações de forma eficiente e dinâmica.</p>
+                <div class="techUsed" >
+                    <p id="html">HTML</p>
+                    <p id="css">CSS</p>
+                    <p id="php">PHP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="mySocials">
+            <h2>Contato</h2>
+        </div>
+        <div id="socialGrid">
+            <a href="https://www.behance.net/voicelesslol" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-behance social-icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/cleytonpadilha" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin social-icon"></i>
+            </a>
+            <a href="https://github.com/cleytonjcp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github social-icon"></i>
+            </a>
         </div>
     </section>
 </body>
+<footer>
+    <p>© Criado e projetado por Cleyton Padilha, todos os direitos reservados. 2025</p>
+</footer>
 </html>

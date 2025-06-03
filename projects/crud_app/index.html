@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #nav {
+            background-color: #252525;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+        }
+
+        #nav h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        #nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        #nav a:hover {
+            color: #6bbdcc;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        #form-section {
+            background-color: #252525;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        #form-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        #form-group-nome, #form-group-email, #form-group-pwd {
+            margin-bottom: 1rem;
+        }
+
+        #form-group-nome label, #form-group-email label, #form-group-pwd label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #form-group-nome input, #form-group-email input, #form-group-pwd input {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #2D2D2D;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: #E0E0E0;
+            font-size: 1rem;
+        }
+
+        #form-group-nome input:focus, #form-group-email input:focus, #form-group-pwd input:focus {
+            outline: none;
+            border-color: #00D4FF;
+        }
+
+        button {
+            background-color: #fff;
+            color: #1E1E1E;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #BB86FC;
+        }
+
+        #table-section {
+            background-color: #252525;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        th {
+            font-weight: 500;
+            color: #00D4FF;
+        }
+
+        tr:nth-child(even) {
+            background-color: #2D2D2D;
+        }
+
+        #actions button {
+            background-color: transparent;
+            color: #ff0000;
+            padding: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        #actions button:hover {
+            color: #810000;
+            background-color: transparent;
+        }
+
+        @media (max-width: 600px) {
+            #nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #nav a {
+                margin-left: 0;
+            }
+
+            #container {
+                margin: 1rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>Crud APP</h1>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div id="form-section">
+            <h2>Adicionar Matrícula</h2>
+            <form id="aluno-form">
+                <input type="hidden" id="aluno-id">
+                <div id="form-group-nome">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite o nome" required>
+                </div>
+                <div id="form-group-pwd">
+                    <label for="id_aluno">ID do aluno</label>
+                    <input type="text" id="id_aluno" placeholder="Digite o ID do aluno" required>
+                </div>
+                <div id="form-group-email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Digite o email" required>
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <div id="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>ID do Aluno</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="alunos-table">
+                    <!-- Dados serão inseridos dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Carregar alunos ao iniciar
+        document.addEventListener('DOMContentLoaded', loadAlunos);
+
+        // Manipular envio do formulário
+        document.getElementById('aluno-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('aluno-id').value;
+            const nome = document.getElementById('nome').value;
+            const id_aluno = document.getElementById('id_aluno').value;
+            const email = document.getElementById('email').value;
+
+            const data = { nome, id_aluno, email };
+            if (id) {
+                data.id = id;
+                updateAluno(data);
+            } else {
+                createAluno(data);
+            }
+        });
+
+        // Carregar todos os alunos
+        async function loadAlunos() {
+            try {
+                const response = await fetch('api.php');
+                const alunos = await response.json();
+                const tableBody = document.getElementById('alunos-table');
+                tableBody.innerHTML = '';
+
+                alunos.forEach(aluno => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.id_aluno}</td>
+                        <td>${aluno.email}</td>
+                        <td id="actions">
+                            <button onclick="editAluno(${aluno.id}, '${aluno.nome}', '${aluno.id_aluno}', '${aluno.email}')">Editar</button>
+                            <button onclick="deleteAluno(${aluno.id})">Excluir</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar alunos:', error);
+            }
+        }
+
+        // Criar novo aluno
+        async function createAluno(data) {
+            try {
+                const response = await fetch('api.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                console.log(result.message);
+                document.getElementById('aluno-form').reset();
+                loadAlunos();
+            } catch (error) {
+                console.error('Erro ao adicionar aluno:', error);
+            }
+        }
+
+        // Editar aluno
+        function editAluno(id, nome, id_aluno, email) {
+            document.getElementById('aluno-id').value = id;
+            document.getElementById('nome').value = nome;
+            document.getElementById('id_aluno').value = id_aluno;
+            document.getElementById('email').value = email;
+            document.querySelector('#form-section h2').textContent = 'Editar Matrícula';
+            document.querySelector('button[type="submit"]').textContent = 'Atualizar';
+        }
+
+        // Atualizar aluno
+        async function updateAluno(data) {
+            try {
+                const response = await fetch('api.php', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                console.log(result.message);
+                document.getElementById('aluno-form').reset();
+                document.getElementById('aluno-id').value = '';
+                document.querySelector('#form-section h2').textContent = 'Adicionar Matrícula';
+                document.querySelector('button[type="submit"]').textContent = 'Adicionar';
+                loadAlunos();
+            } catch (error) {
+                console.error('Erro ao atualizar aluno:', error);
+            }
+        }
+
+        // Excluir aluno
+        async function deleteAluno(id) {
+            try {
+                const response = await fetch('api.php', {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id })
+                });
+                const result = await response.json();
+                console.log(result.message);
+                loadAlunos();
+            } catch (error) {
+                console.error('Erro ao excluir aluno:', error);
+            }
+        }
+    </script>
+</body>
+</html>
