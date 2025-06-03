@@ -1,0 +1,226 @@
+* {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'Nocashe';
+            src: url('assets/fonts/Nocashe.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+        }
+
+        
+
+        header ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        
+
+        .navopt {
+            color: black;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .hireMe {
+            width: 85px;
+            background-color: black;
+            border: 1px solid;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+
+        .container {
+            background-color: grey;
+            width: 100%;
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 50vw;
+            position: relative;
+            z-index: 1;
+            margin-left: 24vw;
+            margin-top: 5vh;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 75px;
+            font-weight: 500;
+            font-family: 'Nocashe';
+        }
+
+        .content h2 {
+            
+            margin-top: -5vh;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .content p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        #html, #css, #jscript, #figma, #github, #photoshop, #illustrator, #php {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: 8px;
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border-radius: 20px;
+            cursor: default;
+        }
+
+        #projects {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .projetosBox {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 80vw;
+            height: 60vh;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            margin: 60px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+
+        .projectImg {
+            margin-top: auto;
+            margin-bottom: auto;
+            border-radius: 20px;
+        }
+
+        .projectImg {
+            height: 350px;
+            margin-top: 10vh;
+            
+        }
+
+        .projectSub {
+            width: 40vw;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            
+        }
+
+        .projectSub h2 {
+            font-weight: 500;
+        }
+
+        .techUsed {
+            display: flex;
+            gap: 20px;
+        }
+
+        .mySocials {
+            width: 100%;
+            height: 5vh;
+            background-color: white;
+            border-top: 1px solid grey;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mySocials h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 35px;
+            text-decoration: underline;
+        }
+
+        .social-icon {
+            color: black;
+            font-size: 35px; 
+            margin: 10px; 
+        }
+
+
+        #socialGrid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15vh;
+
+        }
+
+        footer {
+            background-color: black; /* Fundo escuro */
+            color: #fff; /* Texto branco */
+            text-align: center; /* Centraliza o conteúdo */
+            padding: 3px 0; /* Espaçamento interno */
+            position: relative; /* Para posicionamento, se necessário */
+            width: 100%; /* Largura total */
+            height: 5vh;
+            align-items: center;
+
+        }
