@@ -87,8 +87,8 @@
             position: relative;
             z-index: 1;
             margin-left: 24vw;
-            margin-top: 5vh;
             text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            
         }
 
         .content h1 {
@@ -101,7 +101,7 @@
             
             margin-top: -5vh;
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .content p {
@@ -111,10 +111,11 @@
 
         .skills {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             flex-direction: row;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         #html, #css, #jscript, #figma, #github, #photoshop, #illustrator, #php {
