@@ -12,12 +12,14 @@
 
     <link rel="stylesheet" href="styles.css">
     <style>
+        
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <i class="fas fa-bars hamburger" id="hamburger"></i>
+            <ul id="nav-menu">
                 <a class="navopt" href="#sobreMim">SOBRE</a>
                 <a class="navopt" href="#projects">PROJETOS</a>
                 <a class="hireMe" href="#contato">CONTATO</a>
@@ -33,7 +35,7 @@
             <div class="content">
                 <h1>Cleyton Padilha</h1>
                 <h2>Web Developer/Designer</h2>
-                <p>Foco em Desenvolvimento web com habilidades de UI/UX, conhecimentos sólidos de design e dóminio da lógica de programação.</p>
+                <p>Foco em Desenvolvimento web com habilidades de UI/UX, conhecimentos sólidos de design e domínio da lógica de programação.</p>
                 <div class="skills">
                     <p id="html">HTML</p>
                     <p id="css">CSS</p>
@@ -53,7 +55,7 @@
             <div class="projectSub">
                 <h2>Spotify Clone</h2>
                 <p>Página de login do Spotify redesenhada, com interface moderna e intuitiva para melhor experiência do usuário.</p>
-                <div class="techUsed" >
+                <div class="techUsed">
                     <p id="html">HTML</p>
                     <p id="css">CSS</p>
                 </div>
@@ -63,8 +65,8 @@
             <a href="projects/crud_app/index.html" target="_blank"><img class="projectImg" src="assets/images/Screenshot_1.png" alt="crud_app"></a>
             <div class="projectSub">
                 <h2>Crud App</h2>
-                <p>Aplcação web para criar, ler, editar e excluir dados, gerenciando informações de forma eficiente e dinâmica.</p>
-                <div class="techUsed" >
+                <p>Aplicação web para criar, ler, editar e excluir dados, gerenciando informações de forma eficiente e dinâmica.</p>
+                <div class="techUsed">
                     <p id="html">HTML</p>
                     <p id="css">CSS</p>
                     <p id="php">PHP</p>
@@ -88,8 +90,14 @@
             </a>
         </div>
     </section>
+    <footer>
+        <p>© Criado e projetado por Cleyton Padilha, todos os direitos reservados. 2025</p>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
-<footer>
-    <p>© Criado e projetado por Cleyton Padilha, todos os direitos reservados. 2025</p>
-</footer>
 </html>
