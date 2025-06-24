@@ -1,103 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playing Around</title>
-
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="styles.css">
+    <title>Cleyton Padilha | Desenvolvedor/Designer Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        
+        @font-face {
+            font-family: 'Nocashe';
+            src: url('assets/fonts/Nocashe.otf') format('opentype');
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .nocashe-font {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            letter-spacing: -1px;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #000000, #333333);
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+            background-color: #000;
+            color: #fff;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .contact-button {
+            background-color: #000;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #1f2937;
+        }
+        .project-skill-tag {
+            background-color: #1f2937;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+        }
+        .project-view-button {
+            border: 1px solid #000;
+            color: #000;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .project-view-button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: transparent;
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+            --tw-ring-color: #000;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .form-textarea:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 2px #000;
+        }
+        .form-submit {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .form-submit:hover {
+            background-color: #1f2937;
+        }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <i class="fas fa-bars hamburger" id="hamburger"></i>
-            <ul id="nav-menu">
-                <a class="navopt" href="#sobreMim">SOBRE</a>
-                <a class="navopt" href="#projects">PROJETOS</a>
-                <a class="hireMe" href="#contato">CONTATO</a>
-            </ul>
-        </nav>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Cabeçalho -->
+    <header class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                
+                <!-- Navegação Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="nav-link font-medium">Sobre</a>
+                    <a href="#projects" class="nav-link font-medium">Projetos</a>
+                    <a href="#contact" class="contact-button">Contato</a>
+                </div>
+                
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 border-t border-gray-100">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="font-medium">Sobre</a>
+                <a href="#projects" class="font-medium">Projetos</a>
+                <a href="#contact" class="contact-button text-center">Contato</a>
+            </div>
+        </div>
     </header>
 
-    <section id="sobreMim">
-        <div class="container">
-            <video autoplay loop muted playsinline>
-                <source src="assets/videoBg/videoBackgroundPortfolio.mp4" type="video/mp4">
-            </video>
-            <div class="content">
-                <h1>Cleyton Padilha</h1>
-                <h2>Web Developer/Designer</h2>
-                <p>Foco em Desenvolvimento web com habilidades de UI/UX, conhecimentos sólidos de design e domínio da lógica de programação.</p>
-                <div class="skills">
-                    <p id="html">HTML</p>
-                    <p id="css">CSS</p>
-                    <p id="jscript">JavaScript</p>
-                    <p id="php">PHP</p>
-                    <p id="figma">Figma</p>
-                    <p id="github">Git</p>
-                    <p id="photoshop">Photoshop</p>
-                    <p id="illustrator">Illustrator</p>
+    <!-- Seção Hero -->
+    <section id="about" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 nocashe-font gradient-text">Cleyton Padilha</h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6">
+    Web <span id="typewriter-role" style="border-right: 2px solid #333; padding-right:2px;">Designer</span>
+</h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Focado em desenvolvimento web com habilidades em UI/UX, sólido conhecimento em design e domínio de lógica de programação.
+                        Criando experiências digitais que combinam estética com funcionalidade.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Illustrator</span>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block contact-button">Entrar em Contato</a>
+                </div>
+                
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-lg aspect-[4/3]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-300 rounded-2xl transform rotate-6"></div>
+                        <div class="relative bg-white rounded-2xl overflow-hidden shadow-xl w-full h-full">
+                            <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-2xl">
+                                <source src="assets/videoBg/videoBackgroundPortfolio.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="projects">
-        <div class="projetosBox">
-            <a href="projects/login_page_spotify/index.html" target="_blank"><img class="projectImg" src="assets/images/spotify_login_page_001.png" alt="sptfyImg"></a>
-            <div class="projectSub">
-                <h2>Spotify Clone</h2>
-                <p>Página de login do Spotify redesenhada, com interface moderna e intuitiva para melhor experiência do usuário.</p>
-                <div class="techUsed">
-                    <p id="html">HTML</p>
-                    <p id="css">CSS</p>
+
+    <!-- Seção de Projetos -->
+    <section id="projects" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Projetos em Destaque</h2>
+            
+            <!-- Projeto 1 -->
+            <div class="project-card bg-white rounded-2xl overflow-hidden mb-8 flex flex-col md:flex-row items-center shadow transition hover:shadow-lg max-w-2xl mx-auto">
+                <div class="md:w-2/5 w-full flex items-center justify-center p-6">
+                    <a href="projects/login_page_spotify/index.html" target="_blank">
+                        <img src="assets/images/spotify_login_page_001.png" alt="Clone do Spotify"
+                            class="w-40 h-40 md:w-52 md:h-52 object-cover object-center rounded-xl border border-gray-200 shadow-sm transition hover:scale-105 duration-200">
+                    </a>
+                </div>
+                <div class="md:w-3/5 w-full p-6 flex flex-col justify-between">
+                    <h3 class="text-lg font-bold mb-2">Clone do Spotify</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Página de login do Spotify redesenhada com uma interface moderna e intuitiva para melhor experiência do usuário.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="project-skill-tag">HTML</span>
+                        <span class="project-skill-tag">CSS</span>
+                    </div>
+                    <a href="projects/login_page_spotify/index.html" target="_blank" class="inline-block project-view-button text-sm">Ver Projeto</a>
                 </div>
             </div>
-        </div>
-        <div class="projetosBox">
-            <a href="projects/crud_app/index.html" target="_blank"><img class="projectImg" src="assets/images/Screenshot_1.png" alt="crud_app"></a>
-            <div class="projectSub">
-                <h2>Crud App</h2>
-                <p>Aplicação web para criar, ler, editar e excluir dados, gerenciando informações de forma eficiente e dinâmica.</p>
-                <div class="techUsed">
-                    <p id="html">HTML</p>
-                    <p id="css">CSS</p>
-                    <p id="php">PHP</p>
+            
+            <!-- Projeto 2 -->
+            <div class="project-card bg-white rounded-2xl overflow-hidden mb-8 flex flex-col md:flex-row items-center shadow transition hover:shadow-lg max-w-2xl mx-auto">
+                <div class="md:w-2/5 w-full flex items-center justify-center p-6 order-last md:order-first">
+                    <a href="projects/crud_app/index.html" target="_blank">
+                        <img src="assets/images/Screenshot_1.png" alt="Aplicação CRUD"
+                            class="w-40 h-40 md:w-52 md:h-52 object-cover object-center rounded-xl border border-gray-200 shadow-sm transition hover:scale-105 duration-200">
+                    </a>
+                </div>
+                <div class="md:w-3/5 w-full p-6 flex flex-col justify-between">
+                    <h3 class="text-lg font-bold mb-2">Aplicação CRUD</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Aplicação web para criar, ler, editar e excluir dados, gerenciando informações de forma eficiente e dinâmica.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="project-skill-tag">HTML</span>
+                        <span class="project-skill-tag">CSS</span>
+                        <span class="project-skill-tag">PHP</span>
+                    </div>
+                    <a href="projects/crud_app/index.html" target="_blank" class="inline-block project-view-button text-sm">Ver Projeto</a>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contato">
-        <div class="mySocials">
-            <h2>Contato</h2>
-        </div>
-        <div id="socialGrid">
-            <a href="https://www.behance.net/voicelesslol" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-behance social-icon"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/cleytonpadilha" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin social-icon"></i>
-            </a>
-            <a href="https://github.com/cleytonjcp" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github social-icon"></i>
-            </a>
+
+    <!-- Seção de Contato -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Vamos Nos Conectar</h2>
+            
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <p class="text-xl text-gray-700 mb-8">
+                    Interessado em trabalhar juntos ou tem um projeto em mente? 
+                    Sinta-se à vontade para entrar em contato pelas plataformas abaixo.
+                </p>
+                
+                <div class="flex justify-center space-x-8">
+                    <a href="https://www.behance.net/voicelesslol" target="_blank" class="social-icon text-3xl text-gray-800 hover:text-black">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cleytonpadilha" target="_blank" class="social-icon text-3xl text-gray-800 hover:text-black">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/cleytonjcp" target="_blank" class="social-icon text-3xl text-gray-800 hover:text-black">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm">
+                <h3 class="text-xl font-bold mb-6">Envie-me uma Mensagem</h3>
+                <form action="https://formspree.io/f/meokpjdk" method="POST" id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium mb-2">Nome</label>
+                        <input type="text" id="name" name="name" class="form-input" required aria-required="true" autocomplete="name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-required="true" autocomplete="email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium mb-2">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" class="form-textarea" required aria-required="true"></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="Nova mensagem do portfólio">
+                    <button type="submit" class="form-submit" aria-label="Enviar mensagem">Enviar Mensagem</button>
+                </form>
+            </div>
         </div>
     </section>
-    <footer>
-        <p>© Criado e projetado por Cleyton Padilha, todos os direitos reservados. 2025</p>
+
+    <!-- Rodapé -->
+    <footer class="bg-black text-white py-8 px-6">
+        <div class="container mx-auto text-center">
+            <p class="text-sm text-gray-400">
+                © 2025 Cleyton Padilha. Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
 
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('active');
+        // Alternância do menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Rolagem suave para todos os links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efeito typewriter no subtítulo do nome
+document.addEventListener("DOMContentLoaded", function() {
+    const roles = ["Designer", "Developer"];
+    let currentRole = 0;
+    let isDeleting = false;
+    let txt = '';
+    let wait = 1200;
+    const el = document.getElementById('typewriter-role');
+
+    function type() {
+        const fullTxt = roles[currentRole];
+        if (isDeleting) {
+            txt = fullTxt.substring(0, txt.length - 1);
+        } else {
+            txt = fullTxt.substring(0, txt.length + 1);
+        }
+        el.textContent = txt;
+
+        let typeSpeed = isDeleting ? 60 : 120;
+
+        if (!isDeleting && txt === fullTxt) {
+            typeSpeed = wait;
+            isDeleting = true;
+        } else if (isDeleting && txt === '') {
+            isDeleting = false;
+            currentRole = (currentRole + 1) % roles.length;
+            typeSpeed = 400;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    type();
+});
     </script>
 </body>
 </html>
