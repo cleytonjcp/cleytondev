@@ -184,6 +184,78 @@ h2:hover {
     animation: pop 0.2s ease;
 }
 
+.pause-popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.pause-popup.hidden {
+    display: none;
+}
+.pause-popup-content {
+    background: #b8ab77;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+}
+.pause-popup-content h2 {
+    color: #494432;
+    margin-bottom: 24px;
+    font-size: 1.2em;
+}
+
+.options-popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.options-popup.hidden {
+    display: none;
+}
+.options-popup-content {
+    background: #b8ab77;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    min-width: 260px;
+}
+.options-popup-content h2 {
+    color: #494432;
+    margin-bottom: 24px;
+    font-size: 1.2em;
+}
+.option-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.option-group label {
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    color: #333;
+}
+#volumeRange {
+    width: 180px;
+}
+
 @media (max-width: 900px) {
     .gameContainer {
         flex-direction: column;

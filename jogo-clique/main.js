@@ -7,6 +7,8 @@ let upgrade1Cost = 10;
 let upgrade2Cost = 100;
 let upgrade3Cost = 500;
 let criticalMultiplier = 2;
+let paused = false;
+let pauseInterval = null;
 
 const upgrade2CostElem = document.getElementById('upgrade2Cost');
 if (upgrade2CostElem) {
@@ -28,6 +30,7 @@ const clicksCount = document.getElementById('clickCount');
 
 if (botao && clicksCount) {
     botao.addEventListener('click', function() {
+        if (paused) return;
         let isCritical = Math.random() < criticalChance;
         let ganho = valorDoClique;
         if (isCritical) {
@@ -112,7 +115,7 @@ function atualizarValoresUpgrades() {
 atualizarValoresUpgrades();
 
 setInterval(function() {
-    if (clickPerSecond > 0 && clicksCount) {
+    if (!paused && clickPerSecond > 0 && clicksCount) {
         clicks += clickPerSecond;
         clicksCount.textContent = formatNumber(clicks);
         mostrarUpgradesDisponiveis();
@@ -132,6 +135,32 @@ function mostrarUpgradesDisponiveis() {
         const item = upgrade3CostElem.closest('.upgradeItem');
         if (item) item.classList.remove('hidden');
     }
+}
+
+const pausePopup = document.getElementById('pausePopup');
+const resumeButton = document.getElementById('resumeButton');
+const pauseBtn = document.querySelector('.gameMenu h2'); // Supondo que o primeiro h2 seja "Pausar"
+
+// Função para pausar o jogo
+function pausarJogo() {
+    paused = true;
+    if (pausePopup) pausePopup.classList.remove('hidden');
+}
+
+// Função para retomar o jogo
+function retomarJogo() {
+    paused = false;
+    if (pausePopup) pausePopup.classList.add('hidden');
+}
+
+// Evento para botão "Pausar"
+if (pauseBtn && pauseBtn.textContent.includes('Pausar')) {
+    pauseBtn.addEventListener('click', pausarJogo);
+}
+
+// Evento para botão "Continuar"
+if (resumeButton) {
+    resumeButton.addEventListener('click', retomarJogo);
 }
 
 
