@@ -137,7 +137,7 @@ body {
     background-color: #222;
     color: #fff;
 }
-/* Ajuste para o rodapé */
+
 footer.bg-black {
     background: #000 !important;
     color: #fff !important;
@@ -145,7 +145,7 @@ footer.bg-black {
 footer .text-gray-400 {
     color: #ccc !important;
 }
-/* Ajuste para seção de projetos */
+
 .bg-gray-100 {
     background-color: #f3f4f6 !important;
 }

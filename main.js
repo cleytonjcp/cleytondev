@@ -1,16 +1,13 @@
-// Alternância do menu mobile
 document.getElementById('mobile-menu-button').addEventListener('click', function() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
 });
 
-// Fechar menu mobile ao clicar em um link
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', function() {
         document.getElementById('mobile-menu').classList.add('hidden');
     });
 });
 
-// Rolagem suave para todos os links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -20,7 +17,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Efeito typewriter no subtítulo do nome
 document.addEventListener("DOMContentLoaded", function() {
     const roles = ["Designer", "Developer"];
     let currentRole = 0;
@@ -55,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
     type();
 });
 
-// Loader animation
 window.addEventListener('load', function() {
     const loaderBg = document.getElementById('loader-bg');
     if(loaderBg) {
@@ -63,6 +58,6 @@ window.addEventListener('load', function() {
             loaderBg.style.transition = 'opacity 0.6s';
             loaderBg.style.opacity = '0';
             setTimeout(() => loaderBg.style.display = 'none', 600);
-        }, 1500); // Loader visível por 1,5s antes de sumir suavemente
+        }, 1500);
     }
 });
